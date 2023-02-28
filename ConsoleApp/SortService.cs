@@ -1,4 +1,11 @@
-﻿
+﻿//| Method          | Mean          | Error         | StdDev    | Gen0      | Gen1      | Gen2      | Allocated |
+//| --------------  | -------------:| ----------:   | ----------| ------    | ---------:| ---------:| ----------|
+//| ToListSort      | 2.770 ms      | 0.0032 ms     | 0.0025 ms | 121.0938  | 121.0938  | 121.0938  | 390.72 KB |
+//| ArraySort       | 616.7 us      | 1.28 us       | 1.19 us   |        -  |        -  |        -  | 1 B       |
+//| SelectionSort   | 3,589.579 ms  | 0.4210 ms     | 0.3515 ms | -         | -         | -         | 5.26 KB   |
+//| BubbleSort      | 3,592.351 ms  | 3.1020 ms     | 2.7499 ms | -         | -         | -         | 2.39 KB   |
+
+
 using BenchmarkDotNet.Attributes;
 
 [MemoryDiagnoser]
@@ -17,6 +24,13 @@ public class SortService
             vals[i] = rnd.Next(1, 100);
         }
     }
+
+    [Benchmark]
+    public void ToListSort() => vals.ToList().Sort();
+
+    [Benchmark]
+    public void ArraySort() => Array.Sort(vals);
+
 
     [Benchmark]
     public void SelectionSort()
