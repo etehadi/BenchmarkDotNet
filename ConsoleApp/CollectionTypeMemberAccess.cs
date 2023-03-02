@@ -36,4 +36,20 @@ public class CollectionTypeMemberAccess
 
     [Benchmark]
     public int ReadDictionary() => di[500];
+
+
+
+    [Benchmark]
+    public int SearchByLinqInList() => li.First(p=> p == 500);
+
+
+    [Benchmark]
+    public int SearchByLinqInArray() => arr.First(p => p == 500);
+
+
+    [Benchmark]
+    public int SearchByLinqInDictionary() => di.First(p => p.Value == 500).Value;
+
+
+
 }
