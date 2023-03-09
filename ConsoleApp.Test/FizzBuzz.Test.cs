@@ -1,7 +1,6 @@
-using BenchmarkDotNet.Attributes;
+using ConsoleApp.Test.Extensions;
 using FluentAssertions;
 using System.Collections.Generic;
-using System.Linq;
 using Xunit;
 
 namespace ConsoleApp.Test
@@ -24,8 +23,7 @@ namespace ConsoleApp.Test
 
         public static IEnumerable<object[]> FizzBuzzsTestData()
         {
-            var methods = typeof(FizzBuzz).GetMethods().Where(m => m.GetCustomAttributes(typeof(BenchmarkAttribute), false).Length > 0);
-            foreach (var method in methods)
+            foreach (var method in typeof(FizzBuzz).GetBenchmarkMethods())
             {
                 yield return new object[] { method.Name, 01, new string[] { "1" } };
                 yield return new object[] { method.Name, 03, new string[] { "1", "2", "Fizz" } };
