@@ -10,5 +10,5 @@ using ConsoleApp;
 //var _ = BenchmarkRunner.Run<CollectionTypeMemberAccess>();
 //var _ = BenchmarkRunner.Run<Palindromes>();
 //var _ = BenchmarkRunner.Run<ReadCSV>();
-
-var _ = BenchmarkRunner.Run<RevertString>();
+//var _ = BenchmarkRunner.Run<RevertString>();
+var _ = BenchmarkRunner.Run<FindMaxProduct>();
