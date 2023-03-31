@@ -1,7 +1,8 @@
-﻿//|    Method |      Mean |    Error |   StdDev |   Gen0 | Allocated |
-//|---------- |----------:|---------:|---------:|-------:|----------:|
-//|    ByLinq | 851.01 ns | 2.994 ns | 2.654 ns | 0.5808 |    1216 B |
-//| ByForLoop |  89.94 ns | 0.438 ns | 0.389 ns | 0.2142 |     448 B |
+﻿//|             Method |      Mean |    Error |   StdDev |   Gen0 | Allocated |
+//|------------------- |----------:|---------:|---------:|-------:|----------:|
+//|  ByReverseFunction | 751.98 ns | 8.310 ns | 7.367 ns | 0.4740 |     992 B |
+//| ByReverseFunction2 |  77.50 ns | 0.226 ns | 0.188 ns | 0.2142 |     448 B |
+//|          ByForLoop |  91.17 ns | 0.771 ns | 0.721 ns | 0.2142 |     448 B |
 
 
 using BenchmarkDotNet.Attributes;
